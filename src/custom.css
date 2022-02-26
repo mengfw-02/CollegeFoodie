@@ -1,5 +1,16 @@
 .navbar-nav {
     flex-direction: row;
-    background-color: AliceBlue;
-    color: DarkSlateGrey;
+    color: Black;
   }
+.navbar-custom {
+    background-color : Plum;
+    color: Black;
+  }
+a{
+  color:Black
+}
+a:hover {
+  color: indigo;
+}
+
+  
