@@ -47,7 +47,7 @@ const setupGuides = (data) => {
     guideList.innerHTML = html;
 
     }else {
-        guideList.innerHTML = `<h5 class= "center-align"> Login To Rate Your College Food! </h5>`;
+        //guideList.innerHTML = `<h5 class= "center-align"> Login To Rate Your College Food! </h5>`;
     
     }
  
