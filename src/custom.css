@@ -1,0 +1,5 @@
+.navbar-nav {
+    flex-direction: row;
+    background-color: AliceBlue;
+    color: DarkSlateGrey;
+  }
