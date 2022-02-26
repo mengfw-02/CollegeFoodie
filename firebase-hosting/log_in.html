@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Habiter</title>
+  <title>Login</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body class = "grey ligten-3">
+<body style="background-color: #dda0dd;">
  
     <nav class = "z-depth-0 grey lighten-4">
         <div class = "nav-wrapper container">
@@ -25,13 +25,11 @@
 
                 </li>
                 <li class = "logged-in" style = "display: none;" >
-                    <a href = "#" class = "grey-text" id = "logout"> Logout</a>
+                    <a href = "index.html" class = "grey-text" id = "logout"> Logout</a>
                 </li>
-                <li class = "logged-in" style = "display: none;">
-                    <a href = "#" class = "grey-text modal-trigger" data-target = "modal-create"> Create Guide</a>
-                </li>
+
                 <li class = "logged-out" style = "display: none;">
-                    <a href = "#" class = "grey-text modal-trigger" data-target = "modal-login">Login</a>
+                    <a href = "index.html" class = "grey-text modal-trigger" data-target = "modal-login">Login</a>
                 </li>
 
                 <li class = "logged-out" style = "display: none;">
@@ -48,18 +46,14 @@
             <form id = "signup-form">
                 <div class = "input-field">
                     <input type = "email" id = "signup-email" required />
-                    <label for = "signup-email">Email address </label>
+                    <label for = "signup-email" >Email address </label>
                 </div>
                 <div class = "input-field">
                     <input type = "password" id = "signup-password" required />
-                    <label for = "signup-password"> Choose password</label>
+                    <label for = "signup-password" > Choose password</label>
                 </div>
 
-                <div class = "input-field">
-                    <input type = "text" id = "signup-bio" required />
-                    <label for = "signup-bio"> One Line Bio</label>
-                </div>
-                <button class = "btn yellow darken-2 z-depth-0">Sign up</button>
+                <button class = "btn" >Sign up</button>
             </form>
         </div>
     </div>
@@ -71,13 +65,13 @@
             <form id = "login-form">
                 <div class = "input-field">
                     <input type = "email" id = "login-email" required />
-                    <label for = "login-email">Email address </label>
+                    <label for = "login-email" > Email address </label>
                 </div>
                 <div class = "input-field">
                     <input type = "password" id = "login-password" required />
                     <label for = "login-password"> Your password</label>
                 </div>
-                <button class = "btn yellow darken-2 z-depth-0">Login</button>
+                <button class = "btn"  >Login</button>
             </form>
         </div>
     </div>    
@@ -95,13 +89,13 @@
             <form id = "create-form">
                 <div class = "input-field">
                     <input type = "text" id = "title" required>
-                    <label for = "title">Guide Title </label>
+                    <label for = "title">  </label>
                 </div>
                 <div class = "input-field">
                     <textarea id = "content" class = "materialize-textarea" required></textarea>
-                    <label for = "content"> Guide Content</label>
+                    <label for = "content">  </label>
                 </div>
-                <button class = "btn yellow darken-2 z-depth-0"> Create</button>
+                <button class = "btn" style = "color: #dda0dd;"> </button>
             </form>
         </div>
     </div>
@@ -112,6 +106,11 @@
             
         </ul>
     </div>
+
+    <div class = "return" style = "margin-top: 40px;">
+        <input id = "home" type=button onClick="location.href='../../src/index.html'"value='Return  Home'>
+    </div>
+
 
     
     
