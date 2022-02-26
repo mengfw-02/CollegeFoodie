@@ -24,14 +24,6 @@ auth.onAuthStateChanged(user => {
     if (user) {    
         unsubscribe =  db.collection('guides').onSnapshot(snapshot => {
             setupGuides(snapshot.docs);
-            snapshot.docs.forEach(doc => {
-            const guide = doc.data();
-            db.collections('users').add({
-                title: guide.title,
-                content: guide.content,
-            })
-            })     
-            html += li;
             
         })
         setupUI(user);
@@ -48,7 +40,6 @@ createForm.addEventListener('submit', (e) => {
     db.collection('guides').add({
         title: createForm['title'].value,
         content: createForm['content'].value,
-        user: "haha",
     }).then(() => {
         //close the modal and reset form
         const modal = document.querySelector('#modal-create');
@@ -72,14 +63,11 @@ signupForm.addEventListener('submit', (e) => {
     //sign up the user
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
         
-        return db.collection('users').doc(cred.user.uid).set({
-            bio: signupForm['signup-bio'].value
-        })
-       
-    }).then(() => {
         const modal = document.querySelector('#modal-signup');
         M.Modal.getInstance(modal).close();
         signupForm.reset;
+        document.getElementById("#home").style.display = block;
+
     });
 });
 
