@@ -1,10 +1,13 @@
 .navbar-nav {
     flex-direction: row;
-    color: Black;
+    
   }
+.navbar-nav .active a{
+  color: aqua;
+}
 .navbar-custom {
     background-color : Plum;
-    color: Black;
+   
   }
 a{
   color:Black
@@ -13,7 +16,6 @@ a:hover {
   color: indigo;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Kanit:900');
  body {
 	 background: indigo;
 }
