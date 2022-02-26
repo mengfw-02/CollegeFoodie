@@ -6,15 +6,15 @@ const accountDetails = document.querySelector('.account-details');
 const setupUI = (user) => {
     if (user) {
         //account info
-        db.collection('users').doc(user.uid).get().then(doc => {
-            const html = `
-            <div> logged in as ${user.email}</div>
-            <div>${doc.data().bio}</div>
+       // db.collection('users').doc(user.uid).get().then(doc => {
+            //const html = `
+            //<div> logged in as ${user.email}</div>
+            //<div>${doc.data().bio}</div>
 
-         `;
-         accountDetails.innerHTML = html;
+         //`;
+         //accountDetails.innerHTML = html;
 
-        })
+        //})
         
 
         //toggle UI elements
@@ -47,7 +47,8 @@ const setupGuides = (data) => {
     guideList.innerHTML = html;
 
     }else {
-        guideList.innerHTML = `<h5 class= "center-align"> Login to create guide </h5>`;
+        guideList.innerHTML = `<h5 class= "center-align"> Login To Rate Your College Food! </h5>`;
+    
     }
  
 }
