@@ -13,4 +13,24 @@ a:hover {
   color: indigo;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Kanit:900');
+ body {
+	 background: indigo;
+}
+ h1 {
+	 color: #fff;
+	 font-size: 60px;
+   text-align: center;
+   margin: 5%;
+}
+h2, h3 {
+  color: #fff;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top:2%;
+  margin-bottom:2%;
+}
+
+
   
