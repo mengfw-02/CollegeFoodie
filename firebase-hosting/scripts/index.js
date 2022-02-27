@@ -71,7 +71,7 @@ const recommending = (data) => {
         data.forEach(doc => {
         const guide = doc.data();
        
-        matrix[guide.name][guide.food] = guide.rating;
+        matrix[guide.name][guide.food] = parseInt(guide.rating);
         })
         
 
@@ -192,6 +192,7 @@ var pearson_correlation = function(dataset, p1, p2) {
     for (var other in dataset) {
       if (other === person) continue;
       var similar = distance(dataset, person, other);
+      console.log(similar);
   
       if (similar <= 0) continue;
       for (var item in dataset[other]) {
@@ -224,6 +225,7 @@ var pearson_correlation = function(dataset, p1, p2) {
       return b.val < a.val ? -1 : b.val > a.val ?
         1 : b.val >= a.val ? 0 : NaN;
     });
+    console.log(rank_lst);
     var recommend = [];
     for (var i in rank_lst) {
       recommend.push(rank_lst[i].items);
