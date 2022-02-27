@@ -115,14 +115,12 @@ var pearson_correlation = function(dataset, p1, p2) {
     //and also the product of both point
     for (var item1 in existp1p2) {
       p1_sum += dataset[p1][item1];
-      console.log(p1_sum);
       // console.log(dataset[p1][item1])
       p2_sum += dataset[p2][item1];
       
       p1_sq_sum += Math.pow(dataset[p1][item1], 2);
       p2_sq_sum += Math.pow(dataset[p2][item1], 2);
       prod_p1p2 += dataset[p1][item1] * dataset[p2][item1];
-      console.log(prod_p1p2)
     }
     var numerator = prod_p1p2 - (p1_sum * p2_sum / num_existence);
 
@@ -137,8 +135,6 @@ var pearson_correlation = function(dataset, p1, p2) {
     if (denominator == 0) return 0;
     else {
       var val = numerator / denominator;
-      console.log("val")
-      console.log(val)
       return val;
     }
   
@@ -177,7 +173,6 @@ var pearson_correlation = function(dataset, p1, p2) {
   //console.log(temp);
   
   var recommendation_eng = function(dataset, person, distance) {
-      console.log(dataset);
   
     var totals = {
         //you can avoid creating a setter function
@@ -205,8 +200,6 @@ var pearson_correlation = function(dataset, p1, p2) {
       rank_lst = [];
     for (var other in dataset) {
       if (other === person) continue;
-      console.log("user")
-      console.log(other)
       var similar = distance(dataset, person, other);
     
   
