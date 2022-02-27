@@ -29,6 +29,10 @@
                     <a href = "index.html" class = "grey-text" id = "logout"> Logout</a>
                 </li>
 
+                <li class="logged-in" style = "display:none;">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-create"> Add A Rating</a>
+                </li>
+
                 <li class = "logged-out" style = "display: none;">
                     <a href = "index.html" class = "grey-text modal-trigger" data-target = "modal-login">Login</a>
                 </li>
@@ -86,27 +90,31 @@
 
     <div id = "modal-create" class = "modal">
         <div class = "modal-content">
-            <h4> Create Guide </h4> <br/>
+            <h4> Add A Rating </h4> <br/>
             <form id = "create-form">
                 <div class = "input-field">
                     <input type = "text" id = "title" required>
-                    <label for = "title">  </label>
+                    <label for = "food"> Food </label>
                 </div>
                 <div class = "input-field">
-                    <textarea id = "content" class = "materialize-textarea" required></textarea>
-                    <label for = "content">  </label>
+                    <input type="range" min="0" max="5"  step="0.5" id = "content" value = "Rating">
                 </div>
-                <button class = "btn" style = "color: #dda0dd;"> </button>
+                <button class = "btn" style = "color: #dda0dd;"> Submit </button>
             </form>
         </div>
     </div>
     <h1>Rate A Meal</h1>    
 
-    <div class = "container" style = "margin-top: 40px;">
-        <ul class = "collapsible z-depth-0 guides" style = "border: none;">
-            
+    <div class="container" style="margin-top: 40px;">
+        <ul class="collapsible z-depth-0 guides" style="border: none;">
+    
         </ul>
-    </div>
+      </div>
+
+
+    
+             
+
 
 
 
