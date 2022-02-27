@@ -33,6 +33,10 @@
                     <a href = "index.html" class = "grey-text modal-trigger" data-target = "modal-login">Login</a>
                 </li>
 
+                <li class="logged-in" style = "display:none;">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
+                  </li>
+
                 <li class = "logged-out" style = "display: none;">
                     <a href = "#" class = "grey-text modal-trigger" data-target = "modal-signup">Sign up</a>
                 </li>
@@ -90,11 +94,11 @@
             <form id = "create-form">
                 <div class = "input-field">
                     <input type = "text" id = "title" required>
-                    <label for = "title">  </label>
+                    <label for = "title"> Name of Food </label>
                 </div>
                 <div class = "input-field">
                     <textarea id = "content" class = "materialize-textarea" required></textarea>
-                    <label for = "content">  </label>
+                    <label for = "content"> Rating </label>
                 </div>
                 <button class = "btn" style = "color: #dda0dd;"> </button>
             </form>
@@ -110,6 +114,10 @@
             
         </ul>
     </div>
+
+    <li class = "">
+        <a href = "#" class = "grey-text modal-trigger" data-target = "modal-signup">Sign up</a>
+    </li>
 
 
 
