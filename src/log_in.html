@@ -4,6 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
+  <script type="text/javascript">
+    var onloadCallback = function() {
+      grecaptcha.render('html_element', {
+        'sitekey' : 'your_site_key'
+      });
+    };
+  </script>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -22,25 +29,18 @@
                 <li class="px-3 align-middle"><a href="food.html">Recommendations</a></li>
                 <li class="px-3 align-middle"><a href="rates.html">Rate Food</a></li>
                 <li class="px-3 align-middle"><a href="abouts.html">About</a></li>
-
-                <li class = "logged-in right" style = "display: none;">
-                    <a href = "#" class = "modal-trigger" data-target = "modal-account">Account</a>
-
-                </li>
+                
                 <li class = "logged-in" style = "display: none;" >
-                    <a href = "index.html" id = "logout"> Logout</a>
+                    <a href = "index.html" class = "grey-text" id = "logout"> Logout</a>
                 </li>
 
                 <li class = "logged-out right" style = "display: none;">
-                    <a href = "#" class = "modal-trigger" data-target = "modal-login">Login</a>
+                    <a href = "index.html" class = "modal-trigger" data-target = "modal-login">Login</a>
                 </li>
 
-                <li class="logged-in" style = "display:none;">
-                    <a href="#" class="modal-trigger" data-target="modal-create">Add A Rating</a>
-                  </li>
-
-                <li class = "logged-out right" style = "display: none;">
-                    <a href = "#" class = "modal-trigger" data-target = "modal-signup">Sign up</a>
+                
+                <li class = "logged-out" style = "display: none;">
+                    <a href = "#" class = "grey-text modal-trigger" data-target = "modal-signup">Sign up</a>
                 </li>
             </ul>
 
@@ -68,7 +68,7 @@
 
     <div id = "modal-login" class = "modal">
         <div class = "modal-content">
-            <h4> Login  </h4> <br/>
+            <h4 style = "color: black"> Login  </h4> <br/>
             <form id = "login-form">
                 <div class = "input-field">
                     <input type = "email" id = "login-email" required />
@@ -78,16 +78,15 @@
                     <input type = "password" id = "login-password" required />
                     <label for = "login-password"> Your password</label>
                 </div>
-                <button class = "btn"  >Login</button>
+                <button class = "btn">Login</button>
             </form>
         </div>
     </div>    
 
-   
-
+    
     <div id = "modal-create" class = "modal">
         <div class = "modal-content">
-            <h4> Add A Rating </h4> <br/>
+            <h4 style = "color: black"> Add A Rating </h4> <br/>
             <form id = "create-form">
                 <div class = "input-field">
                     <input type = "text" id = "title" required>
@@ -106,7 +105,19 @@
     <h2>Popular Foods</h2>
     <h2>Popular Colleges</h2>       
 
+   
+
+
     
+    <form action="?" method="POST">
+        <div id="html_element"></div>
+        <br>
+      </form>
+      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+          async defer>
+      </script>
+
+
 
 
     
