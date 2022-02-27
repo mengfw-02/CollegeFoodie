@@ -2,6 +2,7 @@ const guideList = document.querySelector('.guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinkes = document.querySelectorAll('.logged-in');
 const accountDetails = document.querySelector('.account-details');
+
 var matrix = {}
 
 const setupUI = (user) => {
@@ -21,12 +22,15 @@ const setupUI = (user) => {
         //toggle UI elements
         loggedInLinkes.forEach(item => item.style.display = 'block');
         loggedOutLinks.forEach(item => item.style.display = 'none'); 
+        
     } else {
         //hide account info
-        accountDetails.innerHTML = '';
         //toggle UI elements
         loggedInLinkes.forEach(item => item.style.display = 'none');
         loggedOutLinks.forEach(item => item.style.display = 'block'); 
+        const recommend = document.querySelector('.recommend');
+        var text = document.createTextNode("User similar to you also enjoy: Papaya");
+        recommend.appendChild(text);
     }
 }
 //setup guides
@@ -36,6 +40,7 @@ const setupGuides = (data) => {
         let html = '';
         data.forEach(doc => {
         const guide = doc.data();
+       
         const li = `
         <li>
             <div class = "collapsible-header grey lighten-4"> ${guide.food}</div>
@@ -43,11 +48,13 @@ const setupGuides = (data) => {
         </li>
         `;
         html += li;
+       
         matrix[guide.name] = {};
     
     });
-
+  
     guideList.innerHTML = html;
+    
 
     }else {
         //guideList.innerHTML = `<h5 class= "center-align"> Login To Rate Your College Food! </h5>`;
@@ -89,6 +96,7 @@ const recommending = (data) => {
 }
 
 var pearson_correlation = function(dataset, p1, p2) {
+
     var existp1p2 = {};
     for (var item in dataset[p1]) {
       if (item in dataset[p2]) {
@@ -109,23 +117,30 @@ var pearson_correlation = function(dataset, p1, p2) {
     //and also the product of both point
     for (var item1 in existp1p2) {
       p1_sum += dataset[p1][item1];
+      console.log(p1_sum);
       // console.log(dataset[p1][item1])
       p2_sum += dataset[p2][item1];
+      
       p1_sq_sum += Math.pow(dataset[p1][item1], 2);
       p2_sq_sum += Math.pow(dataset[p2][item1], 2);
       prod_p1p2 += dataset[p1][item1] * dataset[p2][item1];
+      console.log(prod_p1p2)
     }
     var numerator = prod_p1p2 - (p1_sum * p2_sum / num_existence);
+
     // console.log(p1_sq_sum)
     // console.log(p2_sq_sum)
     // console.log(prod_p1p2)
     // console.log(num_existence)
     var st1 = p1_sq_sum - Math.pow(p1_sum, 2) / num_existence;
+  
     var st2 = p2_sq_sum - Math.pow(p2_sum, 2) / num_existence;
     var denominator = Math.sqrt(st1 * st2);
     if (denominator == 0) return 0;
     else {
       var val = numerator / denominator;
+      console.log("val")
+      console.log(val)
       return val;
     }
   
@@ -164,6 +179,7 @@ var pearson_correlation = function(dataset, p1, p2) {
   //console.log(temp);
   
   var recommendation_eng = function(dataset, person, distance) {
+      console.log(dataset);
   
     var totals = {
         //you can avoid creating a setter function
@@ -191,8 +207,10 @@ var pearson_correlation = function(dataset, p1, p2) {
       rank_lst = [];
     for (var other in dataset) {
       if (other === person) continue;
+      console.log("user")
+      console.log(other)
       var similar = distance(dataset, person, other);
-      console.log(similar);
+    
   
       if (similar <= 0) continue;
       for (var item in dataset[other]) {
@@ -225,7 +243,6 @@ var pearson_correlation = function(dataset, p1, p2) {
       return b.val < a.val ? -1 : b.val > a.val ?
         1 : b.val >= a.val ? 0 : NaN;
     });
-    console.log(rank_lst);
     var recommend = [];
     for (var i in rank_lst) {
       recommend.push(rank_lst[i].items);
