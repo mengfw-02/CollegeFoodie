@@ -8,38 +8,39 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- our main CSS file -->
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="custom.css">
 </head>
 
 <body style="background-color: #dda0dd;">
  
-    <nav class = "z-depth-0 grey lighten-4">
-        <div class = "nav-wrapper container">
-            
-            <ul id = "nav-mobile" class = "right ">
-                <li class="active px-3"><a class="active" href="log_in.html">Home</a></li>
-                <li class="px-3"><a href="food.html">Recommendations</a></li>
-                <li class="px-3"><a href="rates.html">Rate Food</a></li>
-                <li class="px-3"><a href="abouts.html">About</a></li>
-                <li class = "logged-in" style = "display: none;">
-                    <a href = "#" class = "grey-text modal-trigger" data-target = "modal-account">Account</a>
+    <nav class = "z-depth-0 plum">
+        <ul id = "nav-mobile">
+            <li class="px-3 left"> <a href="log_in.html">
+                <img src="salad.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                College Foodie
+            <a></li>
+            <li class="active px-3 align-middle"><a href="food.html">Recommendations</a></li>
+            <li class="px-3 align-middle"><a href="rates.html">Rate Food</a></li>
+            <li class="px-3 align-middle"><a href="abouts.html">About</a></li>
+            <li class = "logged-in right" style = "display: none;">
+                <a href = "#" class = "modal-trigger" data-target = "modal-account">Account</a>
 
-                </li>
-                <li class = "logged-in" style = "display: none;" >
-                    <a href = "index.html" class = "grey-text" id = "logout"> Logout</a>
-                </li>
+            </li>
+            <li class = "logged-in" style = "display: none;" >
+                <a href = "index.html" id = "logout"> Logout</a>
+            </li>
 
-                <li class = "logged-out" style = "display: none;">
-                    <a href = "index.html" class = "grey-text modal-trigger" data-target = "modal-login">Login</a>
-                </li>
+            <li class = "logged-out right" style = "display: none;">
+                <a href = "index.html" class = " modal-trigger" data-target = "modal-login">Login</a>
+            </li>
 
-                <li class = "logged-out" style = "display: none;">
-                    <a href = "#" class = "grey-text modal-trigger" data-target = "modal-signup">Sign up</a>
-                </li>
-            </ul>
+            <li class = "logged-out right" style = "display: none;">
+                <a href = "#" class = "modal-trigger" data-target = "modal-signup">Sign up</a>
+            </li>
+        </ul>
 
-        </div>
-    </nav>
+    </div>
+</nav>
 
     <div id = "modal-signup" class = "modal">
         <div class = "modal-content">

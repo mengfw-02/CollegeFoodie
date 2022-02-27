@@ -3,40 +3,36 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <title>Habiter</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- our main CSS file -->
-  <link rel="stylesheet" type="text/css" href="custom.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body style="background-color: #dda0dd;">
+<body class = "grey ligten-3">
  
-    <nav class = "z-depth-0 plum">
-            <ul id = "nav-mobile">
-                <li class="active px-3 left"> <a href="log_in.html">
-                    <img src="salad.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                    College Foodie
-                <a></li>
-                <li class="px-3 align-middle"><a href="food.html">Recommendations</a></li>
-                <li class="px-3 align-middle"><a href="rates.html">Rate Food</a></li>
-                <li class="px-3 align-middle"><a href="abouts.html">About</a></li>
-                <li class = "logged-in right" style = "display: none;">
-                    <a href = "#" class = "modal-trigger" data-target = "modal-account">Account</a>
+    <nav class = "z-depth-0 grey lighten-4">
+        <div class = "nav-wrapper container">
+            <a href = "#" class = "brand-logo">
+                <img src = "" style = "width: 180px; margin-top: 10px;">
+
+            </a>
+            <ul id = "nav-mobile" class = "right ">
+                <li class = "logged-in" style = "display: none;">
+                    <a href = "#" class = "grey-text modal-trigger" data-target = "modal-account">Account</a>
 
                 </li>
                 <li class = "logged-in" style = "display: none;" >
-                    <a href = "index.html" class = "grey-text" id = "logout"> Logout</a>
+                    <a href = "#" class = "grey-text" id = "logout"> Logout</a>
                 </li>
-
-                <li class = "logged-out right" style = "display: none;">
-                    <a href = "index.html" class = "modal-trigger" data-target = "modal-login">Login</a>
+                <li class = "logged-in" style = "display: none;">
+                    <a href = "#" class = "grey-text modal-trigger" data-target = "modal-create"> Create Guide</a>
                 </li>
-
-                <li class="logged-in" style = "display:none;">
-                    <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
-                  </li>
+                <li class = "logged-out" style = "display: none;">
+                    <a href = "#" class = "grey-text modal-trigger" data-target = "modal-login">Login</a>
+                </li>
 
                 <li class = "logged-out" style = "display: none;">
                     <a href = "#" class = "grey-text modal-trigger" data-target = "modal-signup">Sign up</a>
@@ -52,14 +48,18 @@
             <form id = "signup-form">
                 <div class = "input-field">
                     <input type = "email" id = "signup-email" required />
-                    <label for = "signup-email" >Email address </label>
+                    <label for = "signup-email">Email address </label>
                 </div>
                 <div class = "input-field">
                     <input type = "password" id = "signup-password" required />
-                    <label for = "signup-password" > Choose password</label>
+                    <label for = "signup-password"> Choose password</label>
                 </div>
 
-                <button class = "btn" >Sign up</button>
+                <div class = "input-field">
+                    <input type = "text" id = "signup-bio" required />
+                    <label for = "signup-bio"> One Line Bio</label>
+                </div>
+                <button class = "btn yellow darken-2 z-depth-0">Sign up</button>
             </form>
         </div>
     </div>
@@ -71,13 +71,13 @@
             <form id = "login-form">
                 <div class = "input-field">
                     <input type = "email" id = "login-email" required />
-                    <label for = "login-email" > Email address </label>
+                    <label for = "login-email">Email address </label>
                 </div>
                 <div class = "input-field">
                     <input type = "password" id = "login-password" required />
                     <label for = "login-password"> Your password</label>
                 </div>
-                <button class = "btn"  >Login</button>
+                <button class = "btn yellow darken-2 z-depth-0">Login</button>
             </form>
         </div>
     </div>    
@@ -95,32 +95,23 @@
             <form id = "create-form">
                 <div class = "input-field">
                     <input type = "text" id = "title" required>
-                    <label for = "title"> Name of Food </label>
+                    <label for = "title">Guide Title </label>
                 </div>
                 <div class = "input-field">
                     <textarea id = "content" class = "materialize-textarea" required></textarea>
-                    <label for = "content"> Rating </label>
+                    <label for = "content"> Guide Content</label>
                 </div>
-                <button class = "btn" style = "color: #dda0dd;"> </button>
+                <button class = "btn yellow darken-2 z-depth-0"> Create</button>
             </form>
         </div>
     </div>
-    <h1> College Foodie <img src="salad.png" width="100" height="100" class="d-inline-block align-middle" alt=""></h1>
-    <h4>Hungry after class? Tired of spending too much on bad food? <br> Share ratings to eat better and cheaper at college.</h4>
-    <h2>Popular Foods</h2>
-    <h2>Popular Colleges</h2>       
+            
 
     <div class = "container" style = "margin-top: 40px;">
         <ul class = "collapsible z-depth-0 guides" style = "border: none;">
             
         </ul>
     </div>
-
-    <li class = "">
-        <a href = "#" class = "grey-text modal-trigger" data-target = "modal-signup">Sign up</a>
-    </li>
-
-
 
     
     
@@ -133,9 +124,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
-    <script src="/firebase-hosting/scripts/index.js"></script>
+    <script src="scripts/index.js"></script>
 
-    <script src="/firebase-hosting/scripts/auth.js"></script>
+    <script src="scripts/auth.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
