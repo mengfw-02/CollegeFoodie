@@ -2,6 +2,7 @@ const guideList = document.querySelector('.guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinkes = document.querySelectorAll('.logged-in');
 const accountDetails = document.querySelector('.account-details');
+var matrix = {}
 
 const setupUI = (user) => {
     if (user) {
@@ -37,11 +38,13 @@ const setupGuides = (data) => {
         const guide = doc.data();
         const li = `
         <li>
-            <div class = "collapsible-header grey lighten-4"> ${guide.title}</div>
-            <div class = "collapsible-body white"> ${guide.content} </div>
+            <div class = "collapsible-header grey lighten-4"> ${guide.food}</div>
+            <div class = "collapsible-body white"> ${guide.rating} </div>
         </li>
         `;
         html += li;
+        matrix[guide.name] = {};
+    
     });
 
     guideList.innerHTML = html;
@@ -63,3 +66,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+const recommending = (data) => {
+    if (data.length) {
+        data.forEach(doc => {
+        const guide = doc.data();
+       
+        matrix[guide.name][guide.food] = guide.rating;
+        })
+        console.log(matrix);
+        
+            
+    }
+
+
+
+    else {
+        //guideList.innerHTML = `<h5 class= "center-align"> Login To Rate Your College Food! </h5>`;
+    
+    }
+ 
+}
