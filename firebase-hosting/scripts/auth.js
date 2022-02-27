@@ -57,7 +57,7 @@ createForm.addEventListener('submit', (e) => {
         M.Modal.getInstance(modal).close();
         createForm.reset;
         const recommend = document.querySelector('.recommend');
-        var text = document.createTextNode("User similar to you also enjoy: Papaya");
+        var text = document.createTextNode("Users similar to you also enjoy: Papaya");
         recommend.appendChild(text);
     }). catch (err => {
         console.log(err.message);
