@@ -20,12 +20,18 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
 let unsubscribe = () => {}; 
-username = 
+username = '';
 auth.onAuthStateChanged(user => {
     if (user) {    
         unsubscribe =  db.collection('matrix').onSnapshot(snapshot => {
             setupGuides(snapshot.docs);
-            recommending(snapshot.docs);
+            matrix = recommending(snapshot.docs);
+            console.log(matrix);
+            rec = recommendation_eng(matrix, username, pearson_correlation);
+            console.log(rec);
+
+
+
             
         })
         setupUI(user);
@@ -71,7 +77,7 @@ signupForm.addEventListener('submit', (e) => {
         const modal = document.querySelector('#modal-signup');
         M.Modal.getInstance(modal).close();
         signupForm.reset;
-        username = cred.user.uid;
+        username = cred.user.email;
     });
 });
 
