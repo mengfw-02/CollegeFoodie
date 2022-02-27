@@ -26,10 +26,10 @@ auth.onAuthStateChanged(user => {
         unsubscribe =  db.collection('matrix').onSnapshot(snapshot => {
             setupGuides(snapshot.docs);
             matrix = recommending(snapshot.docs);
-            console.log(matrix);
             rec = recommendation_eng(matrix, username, pearson_correlation);
-            console.log(rec);
+           
 
+            
 
 
             
@@ -45,7 +45,7 @@ auth.onAuthStateChanged(user => {
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log("enter");
+    
 
     db.collection('matrix').add({
         food: createForm['title'].value,
@@ -56,6 +56,9 @@ createForm.addEventListener('submit', (e) => {
         const modal = document.querySelector('#modal-create');
         M.Modal.getInstance(modal).close();
         createForm.reset;
+        const recommend = document.querySelector('.recommend');
+        var text = document.createTextNode("User similar to you also enjoy: Papaya");
+        recommend.appendChild(text);
     }). catch (err => {
         console.log(err.message);
     })
