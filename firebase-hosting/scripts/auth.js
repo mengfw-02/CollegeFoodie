@@ -19,11 +19,13 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
-let unsubscribe = () => {};
+let unsubscribe = () => {}; 
+username = 
 auth.onAuthStateChanged(user => {
     if (user) {    
-        unsubscribe =  db.collection('guides').onSnapshot(snapshot => {
+        unsubscribe =  db.collection('matrix').onSnapshot(snapshot => {
             setupGuides(snapshot.docs);
+            recommending(snapshot.docs);
             
         })
         setupUI(user);
@@ -37,9 +39,12 @@ auth.onAuthStateChanged(user => {
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    db.collection('guides').add({
-        title: createForm['title'].value,
-        content: createForm['content'].value,
+    console.log("enter");
+
+    db.collection('matrix').add({
+        food: createForm['title'].value,
+        rating: createForm['content'].value,
+        name: username,
     }).then(() => {
         //close the modal and reset form
         const modal = document.querySelector('#modal-create');
@@ -66,8 +71,7 @@ signupForm.addEventListener('submit', (e) => {
         const modal = document.querySelector('#modal-signup');
         M.Modal.getInstance(modal).close();
         signupForm.reset;
-        document.getElementById("#home").style.display = block;
-
+        username = cred.user.uid;
     });
 });
 
@@ -90,5 +94,9 @@ loginForm.addEventListener('submit', (e) => {
         const modal = document.querySelector('#modal-login');
         M.Modal.getInstance(modal).close();
         loginForm.reset;
+        username = cred.user.email;
     });
 });
+
+//return a matrix for recommendation
+
