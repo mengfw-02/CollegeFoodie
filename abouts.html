@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- our main CSS file -->
+  <link rel="stylesheet" type="text/css" href="custom.css">
+</head>
+
+<body style="background-color: #dda0dd;">
+ 
+    <nav class = "z-depth-0 plum">
+        <ul id = "nav-mobile">
+            <li class="px-3 left"> <a href="log_in.html">
+                <img src="salad.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                College Foodie
+            <a></li>
+            <li class="px-3 align-middle"><a href="food.html">Recommendations</a></li>
+            <li class="px-3 align-middle"><a href="rates.html">Rate Food</a></li>
+            <li class="active px-3 align-middle"><a href="abouts.html">About</a></li>
+            
+            <li class = "logged-in" style = "display: none;" >
+                <a href = "index.html" id = "logout"> Logout</a>
+            </li>
+
+            <li class = "logged-out right" style = "display: none;">
+                <a href = "#" class = "modal-trigger" data-target = "modal-login">Login</a>
+            </li>
+
+           
+
+            <li class = "logged-out right" style = "display: none;">
+                <a href = "#" class = "modal-trigger" data-target = "modal-signup">Sign up</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+    <div id = "modal-signup" class = "modal">
+        <div class = "modal-content">
+            <h4 style = "color: black"> Sign up </h4> <br/>
+            <form id = "signup-form">
+                <div class = "input-field">
+                    <input type = "email" id = "signup-email" required />
+                    <label for = "signup-email" >Email address </label>
+                </div>
+                <div class = "input-field">
+                    <input type = "password" id = "signup-password" required />
+                    <label for = "signup-password" > Choose password</label>
+                </div>
+
+                <button class = "btn" >Sign up</button>
+            </form>
+        </div>
+    </div>
+ 
+
+    <div id = "modal-login" class = "modal">
+        <div class = "modal-content">
+            <h4 style = "color: black"> Login  </h4> <br/>
+            <form id = "login-form">
+                <div class = "input-field">
+                    <input type = "email" id = "login-email" required />
+                    <label for = "login-email" > Email address </label>
+                </div>
+                <div class = "input-field">
+                    <input type = "password" id = "login-password" required />
+                    <label for = "login-password"> Your password</label>
+                </div>
+                <button class = "btn"  >Login</button>
+            </form>
+        </div>
+    </div>    
+
+   
+
+    <div id = "modal-create" class = "modal">
+        <div class = "modal-content">
+            <h4 style = "color: black"> Add A Rating </h4> <br/>
+            <form id = "create-form">
+                <div class = "input-field">
+                    <input type = "text" id = "title" required>
+                    <label for = "title">  </label>
+                </div>
+                <div class = "input-field">
+                    <textarea id = "content" class = "materialize-textarea" required></textarea>
+                    <label for = "content">  </label>
+                </div>
+                <button class = "btn" style = "color: #dda0dd;"> </button>
+            </form>
+        </div>
+    </div>       
+
+    
+
+    <h2>We understand. <h2>
+       <!-- <img src="lunch_bowl.jpg" alt="Bowl full of food in a hand." width="200"> -->
+    <h4> Mystery meat... <br> <br>
+        Overcooked pasta... <br> <br>
+        Slimy salad greens... <br> <br>
+        At college, it's easy to spend too much money on food that doesn't taste good or nourish your body. 
+        Yet, every college has its hidden gems. Use College Foodie to rate and find food at your school.</h4>
+    <h4>Because you deserve five star meals.</h4>
+    <h3>
+        &bigstar;
+        &bigstar;
+        &bigstar;
+        &bigstar;
+        &bigstar;
+    </h3>
+
+
+    
+    
+
+
+    
+    <!-- our main JS file -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <script src="/firebase-hosting/scripts/index.js"></script>
+
+    <script src="/firebase-hosting/scripts/auth.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</html>
