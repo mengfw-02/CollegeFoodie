@@ -28,9 +28,7 @@ const setupUI = (user) => {
         //toggle UI elements
         loggedInLinkes.forEach(item => item.style.display = 'none');
         loggedOutLinks.forEach(item => item.style.display = 'block'); 
-        const recommend = document.querySelector('.recommend');
-        var text = document.createTextNode("User similar to you also enjoy: Papaya");
-        recommend.appendChild(text);
+        
     }
 }
 //setup guides
